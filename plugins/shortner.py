@@ -63,7 +63,7 @@ async def short(bot, update):
     
     try:
         s = Shortener()
-        s.owly.short(link)
-        shorten_urls += f"\n**Is.gd :-** {url}"
+        url = s.owly.short(link)
+        shorten_urls += f"\n**ow.ly :-** {url}"
     except Exception as error:
         print(error)
