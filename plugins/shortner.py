@@ -122,9 +122,13 @@ async def short(bot, update):
     except Exception as error:
         print(error)
         
-    # Send the text 
-    await message.edit_text(
-        text=shorten_urls,
-        reply_markup=BUTTONS,
-        disable_web_page_preview=True
-    )
+    # Send the text
+    try:
+        shorten_urls += "\n\nMade by @FayasNoushad"
+        await message.edit_text(
+            text=shorten_urls,
+            reply_markup=BUTTONS,
+            disable_web_page_preview=True
+        )
+    except Exception as error:
+        print(error)
