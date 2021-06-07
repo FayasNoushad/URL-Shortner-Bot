@@ -90,3 +90,10 @@ async def short(bot, update):
             shorten_urls += f"\n**Short.cm :-** {url}"
         except Exception as error:
             print(error)
+    
+    try:
+        s = Shortener()
+        url = s.tinyurl.short(link)
+        shorten_urls += f"\n**TinyURL.com :-** {url}"
+    except Exception as error:
+        print(error)
