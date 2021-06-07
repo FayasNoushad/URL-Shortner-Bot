@@ -14,6 +14,11 @@ BUTTONS = InlineKeyboardMarkup(
 
 @FayasNoushad.on_message(filters.private & filters.regex(r'https?://[^\s]+'))
 async def short(bot, update):
+    message = await update.reply_text(
+        text="`Analysing your link...`",
+        disable_web_page_preview=True
+    )
+    
     link = update.matches[0].group(0)
     shorten_urls = "**--Shorted URLs--**\n"
     
@@ -117,7 +122,7 @@ async def short(bot, update):
         print(error)
         
     # Send the text 
-    await update.reply_text(
+    await message.edit_text(
         text=shorten_urls,
         reply_markup=BUTTONS,
         disable_web_page_preview=True
