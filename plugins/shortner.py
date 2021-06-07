@@ -23,3 +23,10 @@ async def short(bot, update):
         shorten_urls += f"\n**Chilp.it :-** {url}"
     except Exception as error:
         print(error)
+    
+    try:
+        s = Shortener()
+        url = s.clckru.short(link)
+        shorten_urls += f"\n**Clck.ru :-** {url}"
+    except Exception as error:
+        print(error)
