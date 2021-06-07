@@ -16,3 +16,10 @@ async def short(bot, update):
             shorten_urls += f"\n**Bit.ly :-** {url}"
         except Exception as error:
             print(error)
+    
+    try:
+        s = Shortener()
+        url = s.chilpit.short(link)
+        shorten_urls += f"\n**Chilp.it :-** {url}"
+    except Exception as error:
+        print(error)
