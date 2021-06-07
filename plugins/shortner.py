@@ -67,3 +67,10 @@ async def short(bot, update):
         shorten_urls += f"\n**ow.ly :-** {url}"
     except Exception as error:
         print(error)
+    
+    try:
+        s = Shortener()
+        url= s.post.short(link)
+        shorten_urls += f"\n**Po.st :-** {url}"
+    except Exception as error:
+        print(error)
