@@ -39,3 +39,10 @@ async def short(bot, update):
             shorten_urls += f"\n**Cutt.ly :-** {url}"
         except Exception as error:
             print(error)
+    
+    try:
+        s = Shortener()
+        url = s.dagd.short(link)
+        shorten_urls += f"\n**Da.gd :-** {url}"
+    except Exception as error:
+        print(error)
