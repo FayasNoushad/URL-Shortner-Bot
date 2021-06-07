@@ -6,6 +6,12 @@ BITLY_API = os.environ["BITLY_API"]
 CUTTLY_API = os.environ["CUTTLY_API"]
 SHORTCM_API = os.environ["SHORTCM_API"]
 
+BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton(text='⚙ Join Updates Channel ⚙', url='https://telegram.me/FayasNoushad')
+        ]]
+    )
+
 @FayasNoushad.on_message(filters.private & filters.regex(r'https?://[^\s]+'))
 async def short(bot, update):
     link = update.matches[0].group(0)
@@ -109,3 +115,10 @@ async def short(bot, update):
         shorten_urls += f"\n**TinyURL.com :-** {url}"
     except Exception as error:
         print(error)
+        
+    # Send the text 
+    await update.reply_text(
+        text=shorten_urls,
+        reply_markup=BUTTONS,
+        disable_web_page_preview=True
+    )
