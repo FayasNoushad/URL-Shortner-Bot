@@ -19,9 +19,9 @@ License -> https://github.com/FayasNoushad/URL-Shortner-Bot/blob/main/LICENSE
 - `API_HASH` Your API Hash from my.telegram.org
 - `API_ID` Your API ID from my.telegram.org
 - `BOT_TOKEN` Your bot token from @BotFather
-- `BITLY_API` Bit.ly api 
-- `CUTTLY_API` Cutt.ly api 
-- `SHORTCM_API` Short.cm api
+- `BITLY_API` [Bit.ly](https://bit.ly) api 
+- `CUTTLY_API` [Cutt.ly](https://cutt.ly) api 
+- `SHORTCM_API` [Short.cm](https://short.cm) api
 
 ---
 
