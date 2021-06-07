@@ -71,14 +71,14 @@ async def short(bot, update):
     
     try:
         s = Shortener()
-        url= s.post.short(link)
+        url = s.post.short(link)
         shorten_urls += f"\n**Po.st :-** {url}"
     except Exception as error:
         print(error)
     
     try:
         s = Shortener()
-        url= s.qpsru.short(link)
+        url = s.qpsru.short(link)
         shorten_urls += f"\n**Qps.ru :-** {url}"
     except Exception as error:
         print(error)
