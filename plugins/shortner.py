@@ -11,6 +11,7 @@ async def short(bot, update):
     link = update.matches[0].group(0)
     shorten_urls = "**--Shorted URLs--**\n"
     
+    # Bit.ly shorten
     if BITLY_API:
         try:
             s = Shortener(api_key=BITLY_API)
@@ -19,6 +20,7 @@ async def short(bot, update):
         except Exception as error:
             print(error)
     
+    # Chilp.it shorten
     try:
         s = Shortener()
         url = s.chilpit.short(link)
@@ -26,6 +28,7 @@ async def short(bot, update):
     except Exception as error:
         print(error)
     
+    # Clck.ru shorten
     try:
         s = Shortener()
         url = s.clckru.short(link)
@@ -33,6 +36,7 @@ async def short(bot, update):
     except Exception as error:
         print(error)
     
+    # Cutt.ly shorten
     if CUTTLY_API:
         try:
             s = Shortener(api_key=CUTTLY_API)
@@ -41,6 +45,7 @@ async def short(bot, update):
         except Exception as error:
             print(error)
     
+    # Da.gd shorten
     try:
         s = Shortener()
         url = s.dagd.short(link)
@@ -48,6 +53,7 @@ async def short(bot, update):
     except Exception as error:
         print(error)
     
+    # Is.gd shorten
     try:
         s = Shortener()
         url = s.isgd.short(link)
@@ -55,6 +61,7 @@ async def short(bot, update):
     except Exception as error:
         print(error)
     
+    # Os.db shorten
     try:
         s = Shortener()
         url = s.osdb.short(link)
@@ -62,13 +69,15 @@ async def short(bot, update):
     except Exception as error:
         print(error)
     
+    # Ow.ly shorten
     try:
         s = Shortener()
         url = s.owly.short(link)
-        shorten_urls += f"\n**ow.ly :-** {url}"
+        shorten_urls += f"\n**Ow.ly :-** {url}"
     except Exception as error:
         print(error)
     
+    # Po.st shorten
     try:
         s = Shortener()
         url = s.post.short(link)
@@ -76,6 +85,7 @@ async def short(bot, update):
     except Exception as error:
         print(error)
     
+    # Qps.ru shorten
     try:
         s = Shortener()
         url = s.qpsru.short(link)
@@ -83,6 +93,7 @@ async def short(bot, update):
     except Exception as error:
         print(error)
     
+    # Short.cm shorten
     if SHORTCM_API:
         try:
             s = Shortener(api_key=SHORTCM_API)
@@ -91,6 +102,7 @@ async def short(bot, update):
         except Exception as error:
             print(error)
     
+    # TinyURL.com shorten
     try:
         s = Shortener()
         url = s.tinyurl.short(link)
