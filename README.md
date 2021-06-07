@@ -11,3 +11,10 @@ Made with Python3
 Copyright permission under MIT License
 License -> https://github.com/FayasNoushad/URL-Shortner-Bot/blob/main/LICENSE
 ```
+
+---
+
+## Credits
+
+- [Fayas Noushad](https://github.com/FayasNoushad)
+- [Pyrogram](https://github.com/pyrogram/pyrogram)
