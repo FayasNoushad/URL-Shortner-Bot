@@ -60,3 +60,10 @@ async def short(bot, update):
         shorten_urls += f"\n**Os.db :-** {url}"
     except Exception as error:
         print(error)
+    
+    try:
+        s = Shortener()
+        s.owly.short(link)
+        shorten_urls += f"\n**Is.gd :-** {url}"
+    except Exception as error:
+        print(error)
