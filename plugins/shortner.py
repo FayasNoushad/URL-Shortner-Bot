@@ -46,3 +46,10 @@ async def short(bot, update):
         shorten_urls += f"\n**Da.gd :-** {url}"
     except Exception as error:
         print(error)
+    
+    try:
+        s = Shortener()
+        url = s.isgd.short(link)
+        shorten_urls += f"\n**Is.gd :-** {url}"
+    except Exception as error:
+        print(error)
