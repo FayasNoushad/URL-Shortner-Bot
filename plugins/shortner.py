@@ -4,6 +4,7 @@ from pyshorteners import Shortener
 
 BITLY_API = os.environ["BITLY_API"]
 CUTTLY_API = os.environ["CUTTLY_API"]
+SHORTCM_API = os.environ["SHORTCM_API"]
 
 @FayasNoushad.on_message(filters.private & filters.regex(r'https?://[^\s]+'))
 async def short(bot, update):
@@ -81,3 +82,11 @@ async def short(bot, update):
         shorten_urls += f"\n**Qps.ru :-** {url}"
     except Exception as error:
         print(error)
+    
+    if SHORTCM_API:
+        try:
+            s = Shortener(api_key=SHORTCM_API)
+            url = s.shortcm.short(link)
+            shorten_urls += f"\n**Short.cm :-** {url}"
+        except Exception as error:
+            print(error)
