@@ -1,4 +1,5 @@
-from pyrogram import Client, filters
+from main import FayasNoushad
+from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 START_TEXT = """
