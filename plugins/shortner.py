@@ -5,7 +5,8 @@
 # License -> https://github.com/FayasNoushad/URL-Shortner-Bot/blob/main/LICENSE
 
 import os
-from pyrogram import Client, filters
+from main import FayasNoushad
+from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyshorteners import Shortener
 
