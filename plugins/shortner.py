@@ -146,7 +146,7 @@ async def short(bot, update):
         except Exception as error:
             print(f"ttm.sh error :- {error}")
     except Exception as error:
-        print(f"ttm.sh error :- {error}")
+        print(f"NullPointer error :- {error}")
     
     # Send the text
     try:
