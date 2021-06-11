@@ -8,18 +8,20 @@ log = logging.getLogger(__name__)
 import pyrogram
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
+bot_token = os.environ["BOT_TOKEN"]
+api_id = int(os.environ["API_ID"])
+api_hash = os.environ["API_HASH"]
+plugins = dict(
+    root="plugins"
+)
+
+FayasNoushad = Client(
+    "URL-Shortner-Bot",
+    bot_token=bot_token,
+    api_id=api_id,
+    api_hash=api_hash,
+    plugins=plugins
+)
+
 if __name__ == "__main__":
-    bot_token = os.environ["BOT_TOKEN"]
-    api_id = int(os.environ["API_ID"])
-    api_hash = os.environ["API_HASH"]
-    plugins = dict(
-        root="plugins"
-    )
-    FayasNoushad = Client(
-        "URL-Shortner-Bot",
-        bot_token=bot_token,
-        api_id=api_id,
-        api_hash=api_hash,
-        plugins = plugins
-    )
     FayasNoushad.run()
