@@ -110,7 +110,7 @@ async def short(bot, update):
         url = s.qpsru.short(link)
         shorten_urls += f"\n**Qps.ru :-** {url}"
     except Exception as error:
-        print("Qps.ru" error)
+        print("Qps.ru" + error)
     
     # Short.cm shorten
     if SHORTCM_API:
