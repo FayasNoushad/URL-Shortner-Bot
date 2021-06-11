@@ -131,9 +131,9 @@ async def short(bot, update):
     
     # NullPointer shorten
     try:
-        s = Shortener(domain='https://ttm.sh')
+        s = Shortener(domain='https://0x0.st')
         url = s.nullpointer.short(link)
-        shorten_urls += f"\n**ttm.sh :-** {url}"
+        shorten_urls += f"\n**0x0.st :-** {url}"
     except Exception as error:
         print(f"NullPointer error :- {error}")
     
