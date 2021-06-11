@@ -1,4 +1,4 @@
-from main import FayasNoushad
+from pyrogram import Client as FayasNoushad
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
