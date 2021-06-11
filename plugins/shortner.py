@@ -123,25 +123,28 @@ async def short(bot, update):
     
     # TinyURL.com shorten
     try:
-        s = Shortener()
+        try:
         url = s.tinyurl.short(link)
         shorten_urls += f"\n**TinyURL.com :-** {url}"
     except Exception as error:
         print(f"TinyURL.com error :- {error}")
     
-    # 0x0.st shorten
+    # NullPointer shorten
     try:
-        s = Shortener(domain='https://0x0.st')
-        url = s.nullpointer.short(link)
-        shorten_urls += f"\n**0x0.st :-** {url}"
-    except Exception as error:
-        print(f"0x0.st error :- {error}")
-    
-    # ttm.sh shorten
-    try:
-        s = Shortener(domain='https://ttm.sh')
-        url = s.nullpointer.short(link)
-        shorten_urls += f"\n**ttm.sh :-** {url}"
+        # 0x0.st shorten
+        try:
+            s = Shortener(domain='https://0x0.st')
+            url = s.nullpointer.short(link)
+            shorten_urls += f"\n**0x0.st :-** {url}"
+        except Exception as error:
+            print(f"0x0.st error :- {error}")
+        # ttm.sh shorten
+        try:
+            s = Shortener(domain='https://ttm.sh')
+            url = s.nullpointer.short(link)
+            shorten_urls += f"\n**ttm.sh :-** {url}"
+        except Exception as error:
+            print(f"ttm.sh error :- {error}")
     except Exception as error:
         print(f"ttm.sh error :- {error}")
     
