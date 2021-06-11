@@ -16,5 +16,4 @@ FayasNoushad = Client(
     plugins=plugins
 )
 
-if __name__ == "__main__":
-    FayasNoushad.run()
+FayasNoushad.run()
