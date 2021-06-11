@@ -84,7 +84,7 @@ async def short(bot, update):
     try:
         s = Shortener()
         url = s.osdb.short(link)
-        shorten_urls += f"\n**Os.db :-** {url}"
+        shorten_urls += f"\n**Osdb.link :-** {url}"
     except Exception as error:
         print(error)
     
