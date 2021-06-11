@@ -80,7 +80,7 @@ async def short(bot, update):
     except Exception as error:
         print(f"Is.gd error :- {error}")
     
-    # Os.db shorten
+    # Osdb.link shorten
     try:
         s = Shortener()
         url = s.osdb.short(link)
@@ -128,7 +128,23 @@ async def short(bot, update):
         shorten_urls += f"\n**TinyURL.com :-** {url}"
     except Exception as error:
         print(f"TinyURL.com error :- {error}")
-        
+    
+    # 0x0.st shorten
+    try:
+        s = Shortener(domain='https://0x0.st')
+        url = s.nullpointer.short(link)
+        shorten_urls += f"\n**0x0.st :-** {url}"
+    except Exception as error:
+        print(f"0x0.st error :- {error}")
+    
+    # ttm.sh shorten
+    try:
+        s = Shortener(domain='https://ttm.sh')
+        url = s.nullpointer.short(link)
+        shorten_urls += f"\n**ttm.sh :-** {url}"
+    except Exception as error:
+        print(f"ttm.sh error :- {error}")
+    
     # Send the text
     try:
         shorten_urls += "\n\nMade by @FayasNoushad"
