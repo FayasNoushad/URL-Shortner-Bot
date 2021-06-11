@@ -13,7 +13,9 @@ FayasNoushad = Client(
     bot_token=bot_token,
     api_id=api_id,
     api_hash=api_hash,
-    plugins=plugins
+    plugins=plugins,
+    workers=50,
+    sleep_threshold=10
 )
 
 FayasNoushad.run()
