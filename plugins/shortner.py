@@ -123,7 +123,7 @@ async def short(bot, update):
     
     # TinyURL.com shorten
     try:
-        try:
+        s = Shortener()
         url = s.tinyurl.short(link)
         shorten_urls += f"\n**TinyURL.com :-** {url}"
     except Exception as error:
