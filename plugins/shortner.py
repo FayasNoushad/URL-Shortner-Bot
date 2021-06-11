@@ -10,10 +10,6 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyshorteners import Shortener
 
-import logging
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-log = logging.getLogger(__name__)
-
 BITLY_API = os.environ.get("BITLY_API", "")
 CUTTLY_API = os.environ.get("CUTTLY_API", "")
 SHORTCM_API = os.environ.get("SHORTCM_API", "")
