@@ -2,10 +2,6 @@ from main import FayasNoushad
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-import logging
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-log = logging.getLogger(__name__)
-
 START_TEXT = """
 Hello {}, I am a link shortner telegram bot.
 
