@@ -37,7 +37,7 @@ async def short(bot, update):
             url = s.bitly.short(link)
             shorten_urls += f"\n**Bit.ly :-** {url}"
         except Exception as error:
-            print("Bit.ly" + error)
+            print(f"Bit.ly error :- {error}")
     
     # Chilp.it shorten
     try:
@@ -45,7 +45,7 @@ async def short(bot, update):
         url = s.chilpit.short(link)
         shorten_urls += f"\n**Chilp.it :-** {url}"
     except Exception as error:
-        print("Chilp.it" + error)
+        print(f"Chilp.it error :- {error}")
     
     # Clck.ru shorten
     try:
@@ -53,7 +53,7 @@ async def short(bot, update):
         url = s.clckru.short(link)
         shorten_urls += f"\n**Clck.ru :-** {url}"
     except Exception as error:
-        print("Click.ru" + error)
+        print(f"Click.ru error :- {error}")
     
     # Cutt.ly shorten
     if CUTTLY_API:
@@ -62,7 +62,7 @@ async def short(bot, update):
             url = s.cuttly.short(link)
             shorten_urls += f"\n**Cutt.ly :-** {url}"
         except Exception as error:
-            print("Cutt.ly" + error)
+            print(f"Cutt.ly error :- {error}")
     
     # Da.gd shorten
     try:
@@ -70,7 +70,7 @@ async def short(bot, update):
         url = s.dagd.short(link)
         shorten_urls += f"\n**Da.gd :-** {url}"
     except Exception as error:
-        print("Da.gd" + error)
+        print(f"Da.gd error :- {error}")
     
     # Is.gd shorten
     try:
@@ -78,7 +78,7 @@ async def short(bot, update):
         url = s.isgd.short(link)
         shorten_urls += f"\n**Is.gd :-** {url}"
     except Exception as error:
-        print("Is.gd" + error)
+        print(f"Is.gd error :- {error}")
     
     # Os.db shorten
     try:
@@ -86,7 +86,7 @@ async def short(bot, update):
         url = s.osdb.short(link)
         shorten_urls += f"\n**Osdb.link :-** {url}"
     except Exception as error:
-        print("Osdb.link" + error)
+        print(f"Osdb.link error :- {error}")
     
     # Ow.ly shorten
     try:
@@ -94,7 +94,7 @@ async def short(bot, update):
         url = s.owly.short(link)
         shorten_urls += f"\n**Ow.ly :-** {url}"
     except Exception as error:
-        print("Ow.ly" + error)
+        print(f"Ow.ly error :- {error}")
     
     # Po.st shorten
     try:
@@ -102,7 +102,7 @@ async def short(bot, update):
         url = s.post.short(link)
         shorten_urls += f"\n**Po.st :-** {url}"
     except Exception as error:
-        print("Po.st" + error)
+        print(f"Po.st error :- {error}")
     
     # Qps.ru shorten
     try:
@@ -110,7 +110,7 @@ async def short(bot, update):
         url = s.qpsru.short(link)
         shorten_urls += f"\n**Qps.ru :-** {url}"
     except Exception as error:
-        print("Qps.ru" + error)
+        print(f"Qps.ru error :- {error}")
     
     # Short.cm shorten
     if SHORTCM_API:
@@ -119,7 +119,7 @@ async def short(bot, update):
             url = s.shortcm.short(link)
             shorten_urls += f"\n**Short.cm :-** {url}"
         except Exception as error:
-            print("Short.cm" + error)
+            print(f"Short.cm error :- {error}")
     
     # TinyURL.com shorten
     try:
@@ -127,7 +127,7 @@ async def short(bot, update):
         url = s.tinyurl.short(link)
         shorten_urls += f"\n**TinyURL.com :-** {url}"
     except Exception as error:
-        print("TinyURL.com" + error)
+        print(f"TinyURL.com error :- {error}")
         
     # Send the text
     try:
