@@ -10,9 +10,9 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyshorteners import Shortener
 
-BITLY_API = os.environ["BITLY_API"]
-CUTTLY_API = os.environ["CUTTLY_API"]
-SHORTCM_API = os.environ["SHORTCM_API"]
+BITLY_API = os.environ.get("BITLY_API", "")
+CUTTLY_API = os.environ.get("CUTTLY_API", "")
+SHORTCM_API = os.environ.get("SHORTCM_API", "")
 
 BUTTONS = InlineKeyboardMarkup(
         [[
