@@ -24,7 +24,8 @@ BUTTONS = InlineKeyboardMarkup(
 async def short(bot, update):
     message = await update.reply_text(
         text="`Analysing your link...`",
-        disable_web_page_preview=True
+        disable_web_page_preview=True,
+        quote=True
     )
     
     link = update.matches[0].group(0)
@@ -146,4 +147,9 @@ async def short(bot, update):
             disable_web_page_preview=True
         )
     except Exception as error:
+        await message.edit_text(
+            text=error,
+            reply_markup=BUTTONS,
+            disable_web_page_preview=True
+        )
         print(error)
