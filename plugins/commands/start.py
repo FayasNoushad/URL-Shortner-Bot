@@ -5,7 +5,10 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 START_TEXT = """
-Hello {}, I am a link shortner telegram bot.
+Hello {} 😌
+I am a link shortner telegram bot.
+
+>> `I can short any type of link`
 
 Made by @FayasNoushad
 """
