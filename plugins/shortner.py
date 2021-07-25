@@ -35,6 +35,26 @@ async def reply_shortens(bot, update):
         disable_web_page_preview=True
     )
 
+@FayasNoushad.on_inline_query()
+async def inline_short(bot, update):
+    link = update.query.matches[0].group(0)
+    shorten_urls = await short(link)
+    answers = [
+        InlineQueryResultArticle(
+            title="Short Links",
+            description=update.query,
+            input_message_content=InputTextMessageContent(
+                text=shorten_urls,
+                disable_web_page_preview=True
+            ),
+            reply_markup=BUTTONS
+        )
+    ]
+    await bot.answer_inline_query(
+        inline_query_id=update.chat.id,
+        results=answers
+    )
+
 async def short(link):
     shorten_urls = "**--Shorted URLs--**\n"
     
