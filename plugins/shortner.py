@@ -35,7 +35,7 @@ async def reply_shortens(bot, update):
         disable_web_page_preview=True
     )
 
-@FayasNoushad.on_inline_query()
+@FayasNoushad.on_inline_query(filters.regex(r'https?://[^\s]+'))
 async def inline_short(bot, update):
     link = update.query.matches[0].group(0)
     shorten_urls = await short(link)
