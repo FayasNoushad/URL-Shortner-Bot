@@ -21,14 +21,21 @@ BUTTONS = InlineKeyboardMarkup(
     )
 
 @FayasNoushad.on_message(filters.private & filters.regex(r'https?://[^\s]+'))
-async def short(bot, update):
+async def reply_shortens(bot, update):
     message = await update.reply_text(
         text="`Analysing your link...`",
         disable_web_page_preview=True,
         quote=True
     )
-    
     link = update.matches[0].group(0)
+    shorten_urls = await short(link)
+    await message.edit_text(
+        text=shorten_urls,
+        reply_markup=BUTTONS,
+        disable_web_page_preview=True
+    )
+
+async def short(link):
     shorten_urls = "**--Shorted URLs--**\n"
     
     # Bit.ly shorten
@@ -141,15 +148,6 @@ async def short(bot, update):
     # Send the text
     try:
         shorten_urls += "\n\nMade by @FayasNoushad"
-        await message.edit_text(
-            text=shorten_urls,
-            reply_markup=BUTTONS,
-            disable_web_page_preview=True
-        )
+        return shorten_urls
     except Exception as error:
-        await message.edit_text(
-            text=error,
-            reply_markup=BUTTONS,
-            disable_web_page_preview=True
-        )
-        print(error)
+        return error
