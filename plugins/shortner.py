@@ -5,8 +5,7 @@
 # License -> https://github.com/FayasNoushad/URL-Shortner-Bot/blob/main/LICENSE
 
 import os
-from pyrogram import Client as FayasNoushad
-from pyrogram import filters
+from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InlineQueryResultArticle
 from pyshorteners import Shortener
 
@@ -20,7 +19,7 @@ BUTTONS = InlineKeyboardMarkup(
         ]]
     )
 
-@FayasNoushad.on_message(filters.private & filters.regex(r'https?://[^\s]+'))
+@Client.on_message(filters.private & filters.regex(r'https?://[^\s]+'))
 async def reply_shortens(bot, update):
     message = await update.reply_text(
         text="`Analysing your link...`",
@@ -35,7 +34,7 @@ async def reply_shortens(bot, update):
         disable_web_page_preview=True
     )
 
-@FayasNoushad.on_inline_query(filters.regex(r'https?://[^\s]+'))
+@Client.on_inline_query(filters.regex(r'https?://[^\s]+'))
 async def inline_short(bot, update):
     link = update.matches[0].group(0)
     shorten_urls = await short(link)
