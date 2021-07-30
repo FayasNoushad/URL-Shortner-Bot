@@ -1,7 +1,6 @@
 # Author: Fayas (https://github.com/FayasNoushad) (@FayasNoushad)
 
-from pyrogram import Client as FayasNoushad
-from pyrogram import filters
+from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 START_TEXT = """
@@ -19,7 +18,7 @@ START_BUTTONS = InlineKeyboardMarkup(
         ]]
     )
 
-@FayasNoushad.on_message(filters.private & filters.command(["start"]))
+@Client.on_message(filters.private & filters.command(["start"]))
 async def start(bot, update):
     await update.reply_text(
         text=START_TEXT.format(update.from_user.mention),
