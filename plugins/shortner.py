@@ -7,7 +7,7 @@
 import os
 from pyrogram import Client as FayasNoushad
 from pyrogram import filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InlineQueryResultArticle
 from pyshorteners import Shortener
 
 BITLY_API = os.environ.get("BITLY_API", "")
