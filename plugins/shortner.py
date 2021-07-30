@@ -43,7 +43,7 @@ async def inline_short(bot, update):
             title="Short Links",
             description=update.query,
             input_message_content=InputTextMessageContent(
-                text=shorten_urls,
+                message_text=shorten_urls,
                 disable_web_page_preview=True
             ),
             reply_markup=BUTTONS
