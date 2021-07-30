@@ -8,7 +8,7 @@ plugins = dict(
     root="plugins"
 )
 
-FayasNoushad = Client(
+Bot = Client(
     "URL-Shortner-Bot",
     bot_token=bot_token,
     api_id=api_id,
@@ -18,4 +18,4 @@ FayasNoushad = Client(
     sleep_threshold=10
 )
 
-FayasNoushad.run()
+Bot.run()
