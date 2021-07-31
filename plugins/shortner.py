@@ -13,6 +13,7 @@ from pyshorteners import Shortener
 BITLY_API = os.environ.get("BITLY_API", "")
 CUTTLY_API = os.environ.get("CUTTLY_API", "")
 SHORTCM_API = os.environ.get("SHORTCM_API", "")
+GPLINKS_API = os.environ.get("GPLINKS_API", "")
 
 BUTTONS = InlineKeyboardMarkup(
         [[
@@ -168,7 +169,7 @@ async def short(link):
     # GPLinks shorten
     try:
         api_url = "https://gplinks.in/api"
-        params = {'api': GP_LINKS_API, 'url': link}
+        params = {'api': GPLINKS_API, 'url': link}
         async with aiohttp.ClientSession() as session:
             async with session.get(api_url, params=params, raise_for_status=True) as response:
                 data = await response.json()
