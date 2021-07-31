@@ -55,6 +55,7 @@ python3 main.py
 - `BITLY_API` [Bit.ly](https://bit.ly) api from [dev.bitly.com](https://dev.bitly.com)
 - `CUTTLY_API` [Cutt.ly](https://cutt.ly) api from [cutt.ly/cuttly-api](https://cutt.ly/cuttly-api) 
 - `SHORTCM_API` [Short.cm](https://short.cm) api from [developers.short.io](https://developers.short.io)
+- `GPLINKS_API` [GPLinks.in](https://gplinks.in) api from [gplinks.in/api](https://gplinks.in/api)
 
 </details>
 
