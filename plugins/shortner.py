@@ -5,6 +5,7 @@
 # License -> https://github.com/FayasNoushad/URL-Shortner-Bot/blob/main/LICENSE
 
 import os
+import aiohttp
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InlineQueryResultArticle, InputTextMessageContent
 from pyshorteners import Shortener
@@ -163,6 +164,18 @@ async def short(link):
         shorten_urls += f"\n**0x0.st :-** {url}"
     except Exception as error:
         print(f"NullPointer error :- {error}")
+    
+    # GPLinks shorten
+    try:
+        api_url = "https://gplinks.in/api"
+        params = {'api': GP_LINKS_API, 'url': link}
+        async with aiohttp.ClientSession() as session:
+            async with session.get(api_url, params=params, raise_for_status=True) as response:
+                data = await response.json()
+                url = data["shortenedUrl"]
+                shorten_urls += f"\n**GPLinks.in :-** {url}"
+    except Exception as error:
+        print(f"GPLink error :- {error}")
     
     # Send the text
     try:
