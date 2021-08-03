@@ -103,6 +103,15 @@ async def short(link):
     except Exception as error:
         print(f"Da.gd error :- {error}")
     
+    # Git.io shorten
+    if "github.com" in update.text or "github.io" in update.text:
+        try:
+            s = Shortener()
+            url = s.gitio.short(link)
+            shorten_urls += f"\n**Git.io :-** {url}"
+        except Exception as error:
+            print(f"Git.io error :- {error}")
+    
     # Is.gd shorten
     try:
         s = Shortener()
