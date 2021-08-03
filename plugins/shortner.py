@@ -15,6 +15,7 @@ CUTTLY_API = os.environ.get("CUTTLY_API", "")
 SHORTCM_API = os.environ.get("SHORTCM_API", "")
 GPLINKS_API = os.environ.get("GPLINKS_API", "")
 POST_API = os.environ.get("POST_API", "")
+OWLY_API = os.environ.get("OWLY_API", "")
 
 BUTTONS = InlineKeyboardMarkup(
         [[
@@ -119,12 +120,13 @@ async def short(link):
         print(f"Osdb.link error :- {error}")
     
     # Ow.ly shorten
-    try:
-        s = Shortener()
-        url = s.owly.short(link)
-        shorten_urls += f"\n**Ow.ly :-** {url}"
-    except Exception as error:
-        print(f"Ow.ly error :- {error}")
+    if OWLY_API:
+        try:
+            s = Shortener(api_key=OWLY_API)
+            url = s.owly.short(link)
+            shorten_urls += f"\n**Ow.ly :-** {url}"
+        except Exception as error:
+            print(f"Ow.ly error :- {error}")
     
     # Po.st shorten 
     if POST_API:
