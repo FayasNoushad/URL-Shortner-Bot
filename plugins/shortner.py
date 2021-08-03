@@ -104,7 +104,7 @@ async def short(link):
         print(f"Da.gd error :- {error}")
     
     # Git.io shorten
-    if "github.com" in update.text or "github.io" in update.text:
+    if "github.com" in link or "github.io" in link:
         try:
             s = Shortener()
             url = s.gitio.short(link)
