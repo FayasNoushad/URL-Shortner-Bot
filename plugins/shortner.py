@@ -10,12 +10,12 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InlineQueryResultArticle, InputTextMessageContent
 from pyshorteners import Shortener
 
-BITLY_API = os.environ.get("BITLY_API", "")
-CUTTLY_API = os.environ.get("CUTTLY_API", "")
-SHORTCM_API = os.environ.get("SHORTCM_API", "")
-GPLINKS_API = os.environ.get("GPLINKS_API", "")
-POST_API = os.environ.get("POST_API", "")
-OWLY_API = os.environ.get("OWLY_API", "")
+BITLY_API = os.environ.get("BITLY_API", None)
+CUTTLY_API = os.environ.get("CUTTLY_API", None)
+SHORTCM_API = os.environ.get("SHORTCM_API", None)
+GPLINKS_API = os.environ.get("GPLINKS_API", None)
+POST_API = os.environ.get("POST_API", None)
+OWLY_API = os.environ.get("OWLY_API", None)
 
 BUTTONS = InlineKeyboardMarkup(
         [[
