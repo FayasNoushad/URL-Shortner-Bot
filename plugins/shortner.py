@@ -173,12 +173,14 @@ async def short(link):
     
     # NullPointer shorten
     try:
+        # 0x0.st shorten
         try:
             s = Shortener(domain='https://0x0.st')
             url = s.nullpointer.short(link)
             shorten_urls += f"\n**0x0.st :-** {url}"
         except Exception as error:
             print(f"0x0.st :- {error}")
+        # ttm.sh shorten
         try:
             s = Shortener(domain='https://ttm.sh')
             url = s.nullpointer.short(link)
