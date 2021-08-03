@@ -167,16 +167,17 @@ async def short(link):
         print(f"NullPointer error :- {error}")
     
     # GPLinks shorten
-    try:
-        api_url = "https://gplinks.in/api"
-        params = {'api': GPLINKS_API, 'url': link}
-        async with aiohttp.ClientSession() as session:
-            async with session.get(api_url, params=params, raise_for_status=True) as response:
-                data = await response.json()
-                url = data["shortenedUrl"]
-                shorten_urls += f"\n**GPLinks.in :-** {url}"
-    except Exception as error:
-        print(f"GPLink error :- {error}")
+    if GPLINKS_API:
+        try:
+            api_url = "https://gplinks.in/api"
+            params = {'api': GPLINKS_API, 'url': link}
+            async with aiohttp.ClientSession() as session:
+                async with session.get(api_url, params=params, raise_for_status=True) as response:
+                    data = await response.json()
+                    url = data["shortenedUrl"]
+                    shorten_urls += f"\n**GPLinks.in :-** {url}"
+        except Exception as error:
+            print(f"GPLink error :- {error}")
     
     # Send the text
     try:
