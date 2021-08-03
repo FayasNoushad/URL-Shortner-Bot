@@ -14,6 +14,7 @@ BITLY_API = os.environ.get("BITLY_API", "")
 CUTTLY_API = os.environ.get("CUTTLY_API", "")
 SHORTCM_API = os.environ.get("SHORTCM_API", "")
 GPLINKS_API = os.environ.get("GPLINKS_API", "")
+POST_API = os.environ.get("POST_API", "")
 
 BUTTONS = InlineKeyboardMarkup(
         [[
@@ -125,13 +126,14 @@ async def short(link):
     except Exception as error:
         print(f"Ow.ly error :- {error}")
     
-    # Po.st shorten
-    try:
-        s = Shortener()
-        url = s.post.short(link)
-        shorten_urls += f"\n**Po.st :-** {url}"
-    except Exception as error:
-        print(f"Po.st error :- {error}")
+    # Po.st shorten 
+    if POST_API:
+        try:
+            s = Shortener(api_key=POST_API)
+            url = s.post.short(link)
+            shorten_urls += f"\n**Po.st :-** {url}"
+        except Exception as error:
+            print(f"Po.st error :- {error}")
     
     # Qps.ru shorten
     try:
