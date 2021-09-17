@@ -1,6 +1,6 @@
-# URL-Shortner-Bot
+# URL-Shortner-Bot-V2
 
-A link shortner telegram bot
+A link shortner telegram bot version 2 with advanced features
 
 ---
 
