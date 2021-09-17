@@ -20,7 +20,7 @@ License -> https://github.com/FayasNoushad/URL-Shortner-Bot/blob/main/LICENSE
 <br/>
 
 <p align="left">
-  <a href="https://heroku.com/deploy?template=https://github.com/FayasNoushad/URL-Shortner-Bot/tree/main">
+  <a href="https://heroku.com/deploy?template=https://github.com/FayasNoushad/URL-Shortner-Bot-V2/tree/main">
      <img height="30px" src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku">
   </a>
 </p>
@@ -32,8 +32,8 @@ License -> https://github.com/FayasNoushad/URL-Shortner-Bot/blob/main/LICENSE
 <br/>
 
 ```sh
-git clone https://github.com/FayasNoushad/URL-Shortner-Bot/tree/main
-cd URL-Shortner-Bot
+git clone https://github.com/FayasNoushad/URL-Shortner-Bot-V2/tree/main
+cd URL-Shortner-Bot-V2
 pip3 install -r requirements.txt
 # <Create Variables appropriately>
 python3 main.py
