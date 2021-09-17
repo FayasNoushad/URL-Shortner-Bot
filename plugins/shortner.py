@@ -2,7 +2,7 @@
 # (C) @FayasNoushad
 # Copyright permission under MIT License
 # All rights reserved by FayasNoushad
-# License -> https://github.com/FayasNoushad/URL-Shortner-Bot/blob/main/LICENSE
+# License -> https://github.com/FayasNoushad/URL-Shortner-Bot-V2/blob/main/LICENSE
 
 import os
 import aiohttp 
