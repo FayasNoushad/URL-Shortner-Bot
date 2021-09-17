@@ -8,7 +8,7 @@ A link shortner telegram bot
 Made with Python3
 (C) @FayasNoushad
 Copyright permission under MIT License
-License -> https://github.com/FayasNoushad/URL-Shortner-Bot/blob/main/LICENSE
+License -> https://github.com/FayasNoushad/URL-Shortner-Bot-V2/blob/main/LICENSE
 ```
 
 ---
