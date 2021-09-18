@@ -51,4 +51,4 @@ python3 main.py
 
 - [Fayas Noushad](https://github.com/FayasNoushad)
 - [Pyrogram](https://github.com/pyrogram/pyrogram)
-- [Version 1](https://github.com/FayasNoushad/URL-Shortner-Bot)
+- [URL-Shortner-Bot](https://github.com/FayasNoushad/URL-Shortner-Bot)
