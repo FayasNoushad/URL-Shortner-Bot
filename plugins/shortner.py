@@ -19,7 +19,7 @@ OWLY_API = os.environ.get("OWLY_API", None)
 
 BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton(text='⚙ Join Updates Channel ⚙', url='https://telegram.me/FayasNoushad')
+        InlineKeyboardButton(text='⚙ Join Updates Channel ⚙', url='https://telegram.me/Cdx_bot')
         ]]
     )
 
@@ -205,7 +205,7 @@ async def short(link):
     
     # Send the text
     try:
-        shorten_urls += "\n\nMade by @FayasNoushad"
+        shorten_urls += "\n\nMade by @housefull_links"
         return shorten_urls
     except Exception as error:
         return error
