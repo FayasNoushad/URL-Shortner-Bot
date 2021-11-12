@@ -1,9 +1,3 @@
-# URL-Shortner-Bot-V2
-
-A link shortner telegram bot version 2 with advanced features
-
----
-
 ```
 Made with Python3
 (C) @FayasNoushad
@@ -16,7 +10,7 @@ License -> https://github.com/FayasNoushad/URL-Shortner-Bot-V2/blob/main/LICENSE
 ## Deploy
 
 ```sh
-git clone https://github.com/FayasNoushad/URL-Shortner-Bot-V2/tree/main
+git clone https://github.com/FayasNoushad/URL-Shortner-Bot-V2.git
 cd URL-Shortner-Bot-V2
 pip3 install -r requirements.txt
 # <Create Variables appropriately>
@@ -26,10 +20,6 @@ python3 main.py
 ---
 
 ## Variables
-
-<details>
-  <summary><b>See variables</b></summary>
-<br/>
 
 - `API_HASH` Your API Hash from my.telegram.org
 - `API_ID` Your API ID from my.telegram.org
@@ -43,8 +33,6 @@ python3 main.py
 - `POST_API` [Po.st](https://po.st) api
 - `OWLY_API` [Ow.ly](https://ow.ly) api
 
-</details>
-
 ---
 
 ## Credits
@@ -52,3 +40,5 @@ python3 main.py
 - [Fayas Noushad](https://github.com/FayasNoushad)
 - [Pyrogram](https://github.com/pyrogram/pyrogram)
 - [URL-Shortner-Bot](https://github.com/FayasNoushad/URL-Shortner-Bot)
+
+---
