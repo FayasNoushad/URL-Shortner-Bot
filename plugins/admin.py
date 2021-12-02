@@ -1,5 +1,3 @@
-# Author: Fayas (https://github.com/FayasNoushad) (@FayasNoushad)
-
 import os
 import time
 import math
@@ -19,7 +17,12 @@ from pyrogram.errors.exceptions.bad_request_400 import PeerIdInvalid
 
 
 class Database:
-    def __init__(self, url, database_name):
+    
+    def __init__(
+	self,
+	url=os.environ.get("DATABASE"),
+	database_name="FnURLShortBot"
+    ):
         self._client = motor.motor_asyncio.AsyncIOMotorClient(url)
         self.db = self._client[database_name]
         self.col = self.db.users
@@ -92,9 +95,7 @@ class Database:
 
 
 BOT_OWNER = int(os.environ.get("BOT_OWNER"))
-DATABASE = os.environ.get("DATABASE")
-db = Database(DATABASE, "FnURLShortBot")
-broadcast_ids = {}
+db = Database()
 
 
 async def send_msg(user_id, message):
@@ -113,8 +114,10 @@ async def send_msg(user_id, message):
     except Exception as e:
         return 500, f"{user_id} : {traceback.format_exc()}\n"
 
+
 @Client.on_message(filters.private & filters.command("broadcast") & filters.user(BOT_OWNER) & filters.reply, group=10)
 async def broadcast(bot, update):
+	broadcast_ids = {}
 	all_users = await db.get_all_users()
 	broadcast_msg = update.reply_to_message
 	while True:
