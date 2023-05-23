@@ -30,13 +30,9 @@ ABOUT_TEXT = """--**About Me 😎**--
 
 🤖 **Name :** [Link shortner](https://telegram.me/{})
 
-👨‍💻 **Developer :** [Fayas](https://github.com/FayasNoushad)
+👨‍💻 **Developer :** [GitHub](https://github.com/FayasNoushad) | [Telegram](https://telegram.me/FayasNoushad)
 
-📢 **Channel :** [Fayas Noushad](https://telegram.me/FayasNoushad)
-
-👥 **Group :** [Developer Team](https://telegram.me/TheDeveloperTeam)
-
-🌐 **Source :** [👉 Click here](https://github.com/FayasNoushad/URL-Shortner)
+🌐 **Source :** [👉 Click here](https://github.com/FayasNoushad/URL-Shortner-Bot)
 
 📝 **Language :** [Python3](https://python.org)
 
