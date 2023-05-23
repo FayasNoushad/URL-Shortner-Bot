@@ -1,5 +1,5 @@
-# URL Shortner Bot V2
-An advanced url shortner telegram bot
+# URL Shortner Bot
+A url shortner telegram bot
 
 ---
 
@@ -21,11 +21,5 @@ An advanced url shortner telegram bot
 - `GPLINKS_API` [GPLinks.in](https://gplinks.in) api from [gplinks.in/api](https://gplinks.in/api)
 - `POST_API` [Po.st](https://po.st) api
 - `OWLY_API` [Ow.ly](https://ow.ly) api
-
----
-
-## Old Version
-
-- [URL-Shortner-Bot](https://github.com/FayasNoushad/URL-Shortner-Bot)
 
 ---
