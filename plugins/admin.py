@@ -17,17 +17,17 @@ from pyrogram.errors.exceptions.bad_request_400 import PeerIdInvalid
 
 
 class Database:
-    
+        
     def __init__(
-	self,
-	url=os.environ.get("DATABASE"),
-	database_name="FnURLShortBot"
+        self,
+        url=os.environ.get("DATABASE"),
+        database_name="URLShortBot"
     ):
         self._client = motor.motor_asyncio.AsyncIOMotorClient(url)
         self.db = self._client[database_name]
         self.col = self.db.users
         self.cache = {}
-    
+        
     def new_user(self, id):
         return {
             "id": id,
@@ -50,11 +50,11 @@ class Database:
                 "ttm.sh": True
             }
         }
-    
+        
     async def add_user(self, id):
         user = self.new_user(id)
         await self.col.insert_one(user)
-    
+        
     async def get_user(self, id):
         user = self.cache.get(id)
         if user is not None:
@@ -63,26 +63,26 @@ class Database:
         user = await self.col.find_one({"id": int(id)})
         self.cache[id] = user
         return user
-    
+        
     async def is_user_exist(self, id):
         user = await self.col.find_one({'id': int(id)})
         return True if user else False
-    
+        
     async def total_users_count(self):
         count = await self.col.count_documents({})
         return count
-    
+        
     async def get_all_users(self):
         all_users = self.col.find({})
         return all_users
-    
+        
     async def delete_user(self, user_id):
         await self.col.delete_many({'id': int(user_id)})
-    
+        
     async def allow_domain(self, id, domain):
         user = await self.get_user(id)
         return user["domains"].get(domain, False)
-    
+        
     async def update_domain(self, id, domain, bool):
         user = await self.get_user(id)
         domains = user["domains"]
@@ -117,43 +117,43 @@ async def send_msg(user_id, message):
 
 @Client.on_message(filters.private & filters.command("broadcast") & filters.user(BOT_OWNER) & filters.reply, group=10)
 async def broadcast(bot, update):
-	broadcast_ids = {}
-	all_users = await db.get_all_users()
-	broadcast_msg = update.reply_to_message
-	while True:
-	    broadcast_id = ''.join([random.choice(string.ascii_letters) for i in range(3)])
-	    if not broadcast_ids.get(broadcast_id):
-	        break
-	out = await update.reply_text(text=f"Broadcast Started! You will be notified with log file when all the users are notified.")
-	start_time = time.time()
-	total_users = await db.total_users_count()
-	done = 0
-	failed = 0
-	success = 0
-	broadcast_ids[broadcast_id] = dict(total = total_users, current = done, failed = failed, success = success)
-	async with aiofiles.open('broadcast.txt', 'w') as broadcast_log_file:
-	    async for user in all_users:
-	        sts, msg = await send_msg(user_id = int(user['id']), message = broadcast_msg)
-	        if msg is not None:
-	            await broadcast_log_file.write(msg)
-	        if sts == 200:
-	            success += 1
-	        else:
-	            failed += 1
-	        if sts == 400:
-	            await db.delete_user(user['id'])
-	        done += 1
-	        if broadcast_ids.get(broadcast_id) is None:
-	            break
-	        else:
-	            broadcast_ids[broadcast_id].update(dict(current = done, failed = failed, success = success))
-	if broadcast_ids.get(broadcast_id):
-	    broadcast_ids.pop(broadcast_id)
-	completed_in = datetime.timedelta(seconds=int(time.time()-start_time))
-	await asyncio.sleep(3)
-	await out.delete()
-	if failed == 0:
-	    await update.reply_text(text=f"broadcast completed in `{completed_in}`\n\nTotal users {total_users}.\nTotal done {done}, {success} success and {failed} failed.", quote=True)
-	else:
-	    await update.reply_document(document='broadcast.txt', caption=f"broadcast completed in `{completed_in}`\n\nTotal users {total_users}.\nTotal done {done}, {success} success and {failed} failed.")
-	os.remove('broadcast.txt')
+    broadcast_ids = {}
+    all_users = await db.get_all_users()
+    broadcast_msg = update.reply_to_message
+    while True:
+        broadcast_id = ''.join([random.choice(string.ascii_letters) for i in range(3)])
+        if not broadcast_ids.get(broadcast_id):
+            break
+    out = await update.reply_text(text=f"Broadcast Started! You will be notified with log file when all the users are notified.")
+    start_time = time.time()
+    total_users = await db.total_users_count()
+    done = 0
+    failed = 0
+    success = 0
+    broadcast_ids[broadcast_id] = dict(total = total_users, current = done, failed = failed, success = success)
+    async with aiofiles.open('broadcast.txt', 'w') as broadcast_log_file:
+        async for user in all_users:
+            sts, msg = await send_msg(user_id = int(user['id']), message = broadcast_msg)
+            if msg is not None:
+                await broadcast_log_file.write(msg)
+            if sts == 200:
+                success += 1
+            else:
+                failed += 1
+            if sts == 400:
+                await db.delete_user(user['id'])
+            done += 1
+            if broadcast_ids.get(broadcast_id) is None:
+                break
+            else:
+                broadcast_ids[broadcast_id].update(dict(current = done, failed = failed, success = success))
+    if broadcast_ids.get(broadcast_id):
+        broadcast_ids.pop(broadcast_id)
+    completed_in = datetime.timedelta(seconds=int(time.time()-start_time))
+    await asyncio.sleep(3)
+    await out.delete()
+    if failed == 0:
+        await update.reply_text(text=f"broadcast completed in `{completed_in}`\n\nTotal users {total_users}.\nTotal done {done}, {success} success and {failed} failed.", quote=True)
+    else:
+        await update.reply_document(document='broadcast.txt', caption=f"broadcast completed in `{completed_in}`\n\nTotal users {total_users}.\nTotal done {done}, {success} success and {failed} failed.")
+    os.remove('broadcast.txt')

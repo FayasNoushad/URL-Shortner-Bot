@@ -14,11 +14,7 @@ POST_API = os.environ.get("POST_API", None)
 OWLY_API = os.environ.get("OWLY_API", None)
 
 BUTTONS = InlineKeyboardMarkup(
-    [
-        [
-        InlineKeyboardButton(text='⚙ Join Updates Channel ⚙', url='https://telegram.me/FayasNoushad')
-        ]
-    ]
+    [[InlineKeyboardButton(text='⚙ Feedback ⚙', url='https://telegram.me/FayasNoushad')]]
 )
 
 
